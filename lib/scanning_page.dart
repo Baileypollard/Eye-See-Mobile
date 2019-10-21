@@ -42,7 +42,7 @@ class _ScanningPageState extends State<ScanningPage> {
         body: Container(
             constraints: const BoxConstraints.expand(),
             child: GestureDetector(
-              onDoubleTap: () {
+              onDoubleTap: () async {
                 _isDetecting = true;
               },
               child: _vision != null
@@ -50,11 +50,9 @@ class _ScanningPageState extends State<ScanningPage> {
                       fit: StackFit.expand,
                       children: <Widget>[
                         InkWell(
-                          child: FirebaseCameraPreview(_vision),
-                          onDoubleTap: () => setState(() {
-                                _isDetecting = true;
-                              }),
-                        ),
+                            child: FirebaseCameraPreview(_vision),
+                            onDoubleTap: () async =>
+                                await controller.speak("This is a prototype")),
                       ],
                     )
                   : Center(
@@ -83,67 +81,27 @@ class _ScanningPageState extends State<ScanningPage> {
 
     _vision = FirebaseVision(description, ResolutionSetting.high);
 
-    _vision.initialize().then((_) {
+    _vision.initialize().then((_) async {
       if (!mounted) {
         return;
       }
       _vision
           .addVisionEdgeImageLabeler('newmodel', ModelLocation.Remote)
-          .then((onValue) {
-        onValue.listen((onData) {
-          print((onData as List<VisionEdgeImageLabel>).elementAt(0).text);
-        });
+          .then((model) {
+//        model.listen((onData) async {
+//          if (_isDetecting) {
+//          }
+//        });
       });
       setState(() {});
     });
 
-//    _camera.startImageStream((CameraImage image) async {
-//      if (!_isDetecting) return;
-//
-//      _isDetecting = false;
-//
-//      var results = await interpreter.run(
-//        remoteModelName: 'newmodel',
-//        inputBytes: image.planes[0].bytes,
-//        inputOutputOptions: FirebaseModelInputOutputOptions([
-//          FirebaseModelIOOption(FirebaseModelDataType.BYTE, [1, 640, 640, 3])
-//        ], [
-//          FirebaseModelIOOption(FirebaseModelDataType.BYTE, [1, 3])
-//        ]),
-//      );
-//      print('RESULTS: ${results}');
-//    });
-
     setState(() {});
   }
-
-//  Widget _buildResults() {
-//    const Text noResultsText = Text('No results!');
-//
-//    if (_scanResults == null ||
-//        _camera == null ||
-//        !_camera.value.isInitialized) {
-//      return noResultsText;
-//    }
-//
-//    CustomPainter painter;
-//
-//    final Size imageSize = Size(
-//      _camera.value.previewSize.height,
-//      _camera.value.previewSize.width,
-//    );
-//
-//    painter = LabelDetectorPainter(imageSize, _scanResults);
-//
-//    return CustomPaint(
-//      painter: painter,
-//    );
-//  }
 
   @override
   void dispose() {
     _camera.dispose().then((_) {});
-
     super.dispose();
   }
 }
