@@ -86,7 +86,7 @@ class _ScanningPageState extends State<ScanningPage> {
         return;
       }
       _vision
-          .addVisionEdgeImageLabeler('newmodel', ModelLocation.Remote)
+          .addVisionEdgeImageLabeler('test-custom-model', ModelLocation.Remote)
           .then((model) {
 //        model.listen((onData) async {
 //          if (_isDetecting) {
