@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "971057208252",
+    "firebase_url": "https://isee-mobile-application.firebaseio.com",
+    "project_id": "isee-mobile-application",
+    "storage_bucket": "isee-mobile-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971057208252:android:2dc82fed51988f4fd4e9b9",
+        "android_client_info": {
+          "package_name": "mob.eyesee.eye_see_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "971057208252-q27pon8f7esgnre9tj7n3n9ijtgo23m3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR9vtWUpF6L7eO0DYcYfYWTnRaLMzh-G0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "971057208252-q27pon8f7esgnre9tj7n3n9ijtgo23m3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "971057208252-m3tuvpcf09mh9aegcrj85dotjk3vi2hj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "mob.eyesee.eyeSeeMobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
