@@ -118,12 +118,6 @@ class _ScanningPageState extends State<ScanningPage> {
 
       var imageByteList = await imageToByteListFloat(compressed, 256);
 
-//      var imageBytes = (await rootBundle.load("assets/trump.jpeg")).buffer;
-//
-//      i.Image image = i.decodeJpg(imageBytes.asUint8List());
-//
-//      image = i.copyResize(image, width: 256, height: 256);
-
       var results = await interpreter.run(
           remoteModelName: "custom-model",
           inputOutputOptions: ioOptions,

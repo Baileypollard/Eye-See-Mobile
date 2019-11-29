@@ -1,36 +1,36 @@
-Apple Golden Delicious
-Apple Granny Smith
-Apple Red
+Golden Delicious Apple
+Granny Smith Apple
+Red Apple
 Avocado
 Banana
-Bean Valor
-Beans Green
+Valor Bean
+Green Beans
 Beets
-Bitter Melon
+Melon Bitter
 Blood Orange
 Blueberries
 Bok Choy Shanghai
-Broccoli Organic
+Organic Broccoli
 Brussels Sprouts
-Cabbage Flat
-Cabbage Green
-Cabbage Napa
+Flat Cabbage
+Green Cabbage
+Napa Cabbage
 Carrots
-Carrots Baby
+Baby Carrots
 Cauliflower
 Celery
 Chinese Okra
 Chives
 Cilantro
-Coconut Brown
-Coconut Green
-Cucumber Seedless
+Brown Coconut
+Green Coconut
+Seedless Cucumber
 Dill
 Duo Tomatoes
 Ginger
 Grapefruit
-Grapes Green Seedless
-Grapes Red Seedless
+Green Seedless Grapes
+Red Seedless Grapes
 Green Mango
 Guar
 Honeydew Melon
@@ -39,55 +39,55 @@ Karella (Bitter Gourd)
 Kiwi
 Leek
 Lemon
-Lettuce Green Leaf
-Lettuce Romaine Hearts
+Green Leaf Lettuce
+Romaine Hearts Lettuce
 Lime
 Mango Ataulfo
 Mint
-Nectarines Yellow
+Yellow Nectarines
 Ocean Spray Fresh Cranberries
 Okra
-Onion Red
-Onion Yellow
-Orange Seedless
-Papaya Jumbo
-Parsley Curly Fresh
-Parsley Flat Fresh
+Red Onion
+Yellow Onion
+Seedless Orange
+Jumbo Papaya
+Curly Fresh Parsley
+Flat Fresh Parsley
 Parsnip
 Pear Bosc
 Peas Sugar Snap
-Pepper Green Bell
-Pepper Jalapeno
-Pepper Red Bell
-Pepper Thai Chili
-Pepper Yellow
+Green Bell Pepper
+Jalapeno Pepper
+Red Bell Pepper
+Thai Chili Pepper
+Yellow Pepper
 Person
-Plum Black
+Black Plum
 Pointed Gourd
 Pomegranate
-Potato Red
-Potato Russet
-Potato White
-Potato Yellow
-Racist Orange Man
-Radish Red
+Red Potato
+Russet Potato
+White Potato
+Yellow Potato
+Orange Man
+Red Radish
 Raspberries
 Rosemary
 Rutabaga
 Scotch Bonnet Peppers
 Spinach
-Squash Buttercup
-Squash Chayote
-Squash Long
+Buttercup Squash
+Chayote Squash
+Long Squash
 Strawberries
-Sweet Potato Purple
+Purple Sweet Potato
 Taro Root Small
 Thyme
 Tindora
-Tomato Beefsteak
-Tomato Cherry
+Beefsteak Tomato
+Cherry Tomato
 Tomatoes Organic Grape
 Watermelon Mini Seedless
-Yam Yellow
+Yellow Yam
 Yu Choy
-Zucchini Green
+Green Zucchini
