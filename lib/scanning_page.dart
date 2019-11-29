@@ -38,10 +38,8 @@ class _ScanningPageState extends State<ScanningPage> {
     controller.init().then((success) {
       if (success) controller.speak('Welcome to Eye See Mobile');
 
-      manager.registerRemoteModelSource(FirebaseRemoteModelSource(
-        modelName: 'custom-model',
-        enableModelUpdates: true,
-      ));
+      manager.registerRemoteModelSource(
+          FirebaseRemoteModelSource(modelName: 'custom-model'));
 
       rootBundle.loadString('assets/labels.txt').then((string) {
         var _l = string.split('\n');
@@ -109,20 +107,26 @@ class _ScanningPageState extends State<ScanningPage> {
       if (!_isDetecting) return;
       _isDetecting = false;
 
-      var convertedImageBytes = await ImageConverter.convertImagetoJpg(image);
+      var convertedImageBytes = await ImageConverter.convertImagetoPng(image);
 
       var compressed = await FlutterImageCompress.compressWithList(
           convertedImageBytes,
           minHeight: 256,
           minWidth: 256,
-          format: CompressFormat.jpeg);
+          format: CompressFormat.png);
 
-      var ty = await imageToByteListFloat(compressed, 256);
+      var imageByteList = await imageToByteListFloat(compressed, 256);
+
+//      var imageBytes = (await rootBundle.load("assets/trump.jpeg")).buffer;
+//
+//      i.Image image = i.decodeJpg(imageBytes.asUint8List());
+//
+//      image = i.copyResize(image, width: 256, height: 256);
 
       var results = await interpreter.run(
           remoteModelName: "custom-model",
           inputOutputOptions: ioOptions,
-          inputBytes: ty);
+          inputBytes: Uint8List.fromList(imageByteList));
 
       List<ObjectLabel> labelConfidenceList = [];
 
@@ -136,6 +140,7 @@ class _ScanningPageState extends State<ScanningPage> {
       labelConfidenceList.sort((l1, l2) {
         return (l2.confidence.compareTo(l1.confidence));
       });
+      print(labelConfidenceList.toString());
 
       controller.speak('This is a ${labelConfidenceList.elementAt(0).label}');
     });
@@ -150,6 +155,25 @@ class _ScanningPageState extends State<ScanningPage> {
     var convertedBytes = Float32List(1 * _inputSize * _inputSize * 3);
     var buffer = Float32List.view(convertedBytes.buffer);
 
+    int pixelIndex = 0;
+    for (var i = 0; i < _inputSize; i++) {
+      for (var j = 0; j < _inputSize; j++) {
+        var pixel = image.getPixel(i, j);
+        buffer[pixelIndex] = ((pixel >> 16) & 0xFF) / 255;
+        pixelIndex += 1;
+        buffer[pixelIndex] = ((pixel >> 8) & 0xFF) / 255;
+        pixelIndex += 1;
+        buffer[pixelIndex] = ((pixel) & 0xFF) / 255;
+        pixelIndex += 1;
+      }
+    }
+    return convertedBytes.buffer.asUint8List();
+  }
+
+  Uint8List imageToByteList(i.Image image) {
+    var _inputSize = 256;
+    var convertedBytes = Float32List(1 * _inputSize * _inputSize * 3);
+    var buffer = Float32List.view(convertedBytes.buffer);
     int pixelIndex = 0;
     for (var i = 0; i < _inputSize; i++) {
       for (var j = 0; j < _inputSize; j++) {
