@@ -1,13 +1,6 @@
-Apple Ambrosia
-Apple Cortland
-Apple Empire
-Apple Gala
 Apple Golden Delicious
 Apple Granny Smith
-Apple Honeycrisp
-Apple Mcintosh
-Apple Royal Gala
-Apple Spartan
+Apple Red
 Avocado
 Banana
 Bean Valor
@@ -22,47 +15,39 @@ Brussels Sprouts
 Cabbage Flat
 Cabbage Green
 Cabbage Napa
-Carrot Red
 Carrots
 Carrots Baby
-Carrots Organic
 Cauliflower
-Cauliflower Organic
 Celery
 Chinese Okra
 Chives
 Cilantro
 Coconut Brown
 Coconut Green
-Cucumber Organic
+Cucumber Seedless
 Dill
-Dill Fresh
 Duo Tomatoes
 Ginger
 Grapefruit
-Grapefruit Large Red
 Grapes Green Seedless
 Grapes Red Seedless
 Green Mango
 Guar
 Honeydew Melon
 Kale
-Kale Organic
 Karella (Bitter Gourd)
 Kiwi
 Leek
 Lemon
-Lemons Organic
 Lettuce Green Leaf
+Lettuce Romaine Hearts
 Lime
 Mango Ataulfo
 Mint
-Mint Fresh
 Nectarines Yellow
-Nectarines Yellow Flesh
+Ocean Spray Fresh Cranberries
 Okra
 Onion Red
-Onion Sweet
 Onion Yellow
 Orange Seedless
 Papaya Jumbo
@@ -70,19 +55,39 @@ Parsley Curly Fresh
 Parsley Flat Fresh
 Parsnip
 Pear Bosc
-Pears Organic Bartlett
 Peas Sugar Snap
 Pepper Green Bell
 Pepper Jalapeno
-Pepper Organic Green
 Pepper Red Bell
+Pepper Thai Chili
 Pepper Yellow
+Person
 Plum Black
 Pointed Gourd
 Pomegranate
+Potato Red
+Potato Russet
+Potato White
+Potato Yellow
+Racist Orange Man
+Radish Red
 Raspberries
-Strawberries Organic
+Rosemary
+Rutabaga
+Scotch Bonnet Peppers
+Spinach
+Squash Buttercup
+Squash Chayote
+Squash Long
+Strawberries
+Sweet Potato Purple
+Taro Root Small
+Thyme
+Tindora
+Tomato Beefsteak
+Tomato Cherry
+Tomatoes Organic Grape
 Watermelon Mini Seedless
 Yam Yellow
+Yu Choy
 Zucchini Green
-Zucchini Organic

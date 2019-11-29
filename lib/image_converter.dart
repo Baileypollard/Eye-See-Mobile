@@ -2,7 +2,7 @@ import 'package:camera/camera.dart';
 import 'package:image/image.dart' as imglib;
 
 class ImageConverter {
-  static Future<List<int>> convertImagetoPng(CameraImage image) async {
+  static Future<List<int>> convertImagetoJpg(CameraImage image) async {
     try {
       imglib.Image img;
       if (image.format.group == ImageFormatGroup.yuv420) {
@@ -11,11 +11,11 @@ class ImageConverter {
         img = _convertBGRA8888(image);
       }
 
-      imglib.PngEncoder pngEncoder = new imglib.PngEncoder();
+      imglib.JpegEncoder jpgEncoder = new imglib.JpegEncoder(quality: 100);
 
       // Convert to png
-      List<int> png = pngEncoder.encodeImage(img);
-      return png;
+      List<int> jpg = jpgEncoder.encodeImage(img);
+      return jpg;
     } catch (e) {
       print(">>>>>>>>>>>> ERROR:" + e.toString());
     }

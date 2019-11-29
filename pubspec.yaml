@@ -21,11 +21,11 @@ dependencies:
     sdk: flutter
   flutter_text_to_speech: ^3.0.7
   camera: ^0.5.4+2
-#  firebase_livestream_ml_vision: ^1.0.1
-#  firebase_ml_vision: ^0.9.3+3
+
   mlkit: ^0.15.0
   flutter_image_compress: ^0.6.3
   image: ^2.1.9
+  image_gallery_saver: ^1.2.2
 
 
   # The following adds the Cupertino Icons font to your application.
