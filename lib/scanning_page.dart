@@ -113,6 +113,7 @@ class _ScanningPageState extends State<ScanningPage> {
           convertedImageBytes,
           minHeight: 256,
           minWidth: 256,
+          rotate: -90,
           format: CompressFormat.png);
 
       var imageByteList = await imageToByteListFloat(compressed, 256);
