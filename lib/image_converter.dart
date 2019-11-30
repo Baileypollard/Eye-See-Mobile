@@ -2,19 +2,19 @@ import 'package:camera/camera.dart';
 import 'package:image/image.dart' as imglib;
 
 class ImageConverter {
-  static Future<List<int>> convertImagetoPng(CameraImage image) async {
+  static Future<List<int>> convertImagetoJpg(CameraImage image) async {
     try {
       imglib.Image img;
       if (image.format.group == ImageFormatGroup.yuv420) {
-        img = _convertYUV420(image);
+        img = await convertYUV420toImageColor(image);
       } else if (image.format.group == ImageFormatGroup.bgra8888) {
         img = _convertBGRA8888(image);
       }
 
-      imglib.JpegEncoder pngEncoder = new imglib.JpegEncoder();
+      imglib.JpegEncoder jpeg = new imglib.JpegEncoder();
 
       // Convert to png
-      List<int> png = pngEncoder.encodeImage(img);
+      List<int> png = jpeg.encodeImage(img);
       return png;
     } catch (e) {
       print(">>>>>>>>>>>> ERROR:" + e.toString());
@@ -27,12 +27,12 @@ class ImageConverter {
   static imglib.Image _convertBGRA8888(CameraImage image) {
     return imglib.Image.fromBytes(
         image.width, image.height, image.planes[0].bytes,
-        format: imglib.Format.rgba, channels: imglib.Channels.rgb);
+        format: imglib.Format.bgra, channels: imglib.Channels.rgb);
   }
 
 // CameraImage YUV420_888 -> PNG -> Image (compresion:0, filter: none)
-// Black
-  Future<imglib.Image> convertYUV420toImageColor(CameraImage image) async {
+  static Future<imglib.Image> convertYUV420toImageColor(
+      CameraImage image) async {
     try {
       final int width = image.width;
       final int height = image.height;

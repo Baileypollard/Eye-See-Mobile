@@ -113,14 +113,13 @@ class _ScanningPageState extends State<ScanningPage> {
       if (!_isDetecting) return;
       _isDetecting = false;
 
-      var convertedImageBytes = await ImageConverter.convertImagetoPng(image);
+      var convertedImageBytes = await ImageConverter.convertImagetoJpg(image);
 
       compressed = await FlutterImageCompress.compressWithList(
-          image.planes[0].bytes.toList(),
+          convertedImageBytes,
           minHeight: 256,
           minWidth: 256,
-          rotate: -90,
-          format: CompressFormat.png);
+          format: CompressFormat.jpeg);
 
       setState(() {});
 
