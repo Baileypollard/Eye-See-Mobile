@@ -19,6 +19,7 @@ class ScanningPage extends StatefulWidget {
 class _ScanningPageState extends State<ScanningPage> {
   CameraController _camera;
   List<String> labels;
+  List<int> compressed;
 
   bool _isDetecting = false;
   VoiceController controller = FlutterTextToSpeech.instance.voiceController();
@@ -62,14 +63,19 @@ class _ScanningPageState extends State<ScanningPage> {
               onDoubleTap: () async {},
               child: _camera != null
                   ? Stack(
-                      fit: StackFit.passthrough,
                       children: <Widget>[
                         InkWell(
                           child: CameraPreview(_camera),
                           onDoubleTap: () {
                             _isDetecting = true;
                           },
-                        )
+                        ),
+                        compressed != null
+                            ? Image.memory(
+                                Uint8List.fromList(compressed),
+                                alignment: AlignmentDirectional.bottomEnd,
+                              )
+                            : Text("None"),
                       ],
                     )
                   : Center(
@@ -109,12 +115,14 @@ class _ScanningPageState extends State<ScanningPage> {
 
       var convertedImageBytes = await ImageConverter.convertImagetoPng(image);
 
-      var compressed = await FlutterImageCompress.compressWithList(
-          convertedImageBytes,
+      compressed = await FlutterImageCompress.compressWithList(
+          image.planes[0].bytes.toList(),
           minHeight: 256,
           minWidth: 256,
           rotate: -90,
           format: CompressFormat.png);
+
+      setState(() {});
 
       var imageByteList = await imageToByteListFloat(compressed, 256);
 
