@@ -27,7 +27,7 @@ class ImageConverter {
   static imglib.Image _convertBGRA8888(CameraImage image) {
     return imglib.Image.fromBytes(
         image.width, image.height, image.planes[0].bytes,
-        format: imglib.Format.bgra, channels: imglib.Channels.rgb);
+        format: imglib.Format.rgba);
   }
 
 // CameraImage YUV420_888 -> PNG -> Image (compresion:0, filter: none)

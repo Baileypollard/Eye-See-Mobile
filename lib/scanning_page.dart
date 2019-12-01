@@ -119,6 +119,7 @@ class _ScanningPageState extends State<ScanningPage> {
           convertedImageBytes,
           minHeight: 256,
           minWidth: 256,
+          rotate: -90,
           format: CompressFormat.jpeg);
 
       setState(() {});
