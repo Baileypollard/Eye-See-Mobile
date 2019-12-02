@@ -37,8 +37,9 @@ class _ScanningPageState extends State<ScanningPage> {
   void initState() {
     super.initState();
     controller.init().then((success) {
-      if (success) controller.speak('Welcome to Eye See Mobile');
-
+      if (success)
+        controller
+            .speak('Welcome to Eye See Mobile. Double tap to identify objects');
       manager.registerRemoteModelSource(
           FirebaseRemoteModelSource(modelName: 'custom-model'));
 
@@ -70,12 +71,6 @@ class _ScanningPageState extends State<ScanningPage> {
                             _isDetecting = true;
                           },
                         ),
-                        compressed != null
-                            ? Image.memory(
-                                Uint8List.fromList(compressed),
-                                alignment: AlignmentDirectional.bottomEnd,
-                              )
-                            : Text("None"),
                       ],
                     )
                   : Center(
@@ -158,25 +153,6 @@ class _ScanningPageState extends State<ScanningPage> {
     var convertedBytes = Float32List(1 * _inputSize * _inputSize * 3);
     var buffer = Float32List.view(convertedBytes.buffer);
 
-    int pixelIndex = 0;
-    for (var i = 0; i < _inputSize; i++) {
-      for (var j = 0; j < _inputSize; j++) {
-        var pixel = image.getPixel(i, j);
-        buffer[pixelIndex] = ((pixel >> 16) & 0xFF) / 255;
-        pixelIndex += 1;
-        buffer[pixelIndex] = ((pixel >> 8) & 0xFF) / 255;
-        pixelIndex += 1;
-        buffer[pixelIndex] = ((pixel) & 0xFF) / 255;
-        pixelIndex += 1;
-      }
-    }
-    return convertedBytes.buffer.asUint8List();
-  }
-
-  Uint8List imageToByteList(i.Image image) {
-    var _inputSize = 256;
-    var convertedBytes = Float32List(1 * _inputSize * _inputSize * 3);
-    var buffer = Float32List.view(convertedBytes.buffer);
     int pixelIndex = 0;
     for (var i = 0; i < _inputSize; i++) {
       for (var j = 0; j < _inputSize; j++) {
