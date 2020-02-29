@@ -1,16 +1,41 @@
-# eye_see_mobile
+# Eye See Mobile
+This project was completed as part of COMP4583 Mobile/Ubiquitous Computing course at Acadia University that required students complete a sizable project using Flutter, Google's cross-platform programming language. 
 
-Eye See Mobile.
 
-## Getting Started
+# Our Roles
+My group consisted of 3 group memebers: Myself, Casson Smith and Justin Hiltz. Our responsibilities were divded as follows:
+  - Bailey Pollard (Myself): Mobile Developer, Data collector
+  - Casson Smith: Data Cleaner
+  - Justin Hiltz: Tensor Flow/Tensor Flow Lite
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+# Inspiration
+The application that we designed and developed was called Eye See Mobile. The idea stemmed from the idea of making shopping an idependant activity for the visually imparied. After scanning through the current available solutions, it was apparent that none of them offer a long term affordble solution for the visually impaired. Our goal was to use the power of Artificial Intelligence to train a model which could accurately identify popular products from a Canadian grocery store, more specifically Walmart. 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+# How we did it?
+## Finding Data Labels
+Our group first needed a list of popular grocery items which can be found in the majority of Canadian grocery stores. I began with a google search for popular grocery items which yielded no results. I then resorted to using a webscraper to scrape roughly 18,000 publicly available item descriptions from Walmart.ca. These descriptions were then saved to a .csv file which divided them into product categories. 
+Unfortunately, 18,000 product labels was too much to handle provided the resources we had to work with. Therefore, we decided that the best course of action would be to focus on the produce category. This resulted in roughly 300 labels which was a more managable amount provided our resources. 
+
+
+## Fetching The Images
+Both Tensor Flow and Google ML Vision Edge documentation recommended a minimum of 100 images per label, meaning that we would have to fetch roughly 30,000 images. I managed to find a python program on github which scraped Google Images for the first X amount of images for any given description. We split up the image fetching tasks between 7 threads which resulted in a completion time of roughly 2 hours. After we had all ~30,000 images downloaded, the real fun began.
+
+
+## Data Cleaning
+Casson was given the task to clean all the images, removing unrelated images from each dataset. As you can imagine, this was a rather time consuming process with took roughly 1 week to complete. We ended up removing many labels which we predicted would affect our models predictions negatively (i.e removing organic produce variants and similiar looking produce). As a result, we had 93 labels left which is what we used to develop our final model.
+
+## Tensor Flow/Tensor Flow Lite
+
+
+
+
+
+## Flutter Implementation
+
+
+
+
+
+## Results
