@@ -26,16 +26,14 @@ Both Tensor Flow and Google ML Vision Edge documentation recommended a minimum o
 ## Data Cleaning
 Casson was given the task to clean all the images, removing unrelated images from each dataset. As you can imagine, this was a rather time consuming process with took roughly 1 week to complete. We ended up removing many labels which we predicted would affect our models predictions negatively (i.e removing organic produce variants and similiar looking produce). As a result, we had 93 labels left which is what we used to develop our final model.
 
+
 ## TensorFlow/TensorFlow Lite
 The image classifier consists of a convolutional neural network with an architecture similar to the popular VGG16 network. The model was initially built and trained on our cleaned dataset using tf.Keras. Performance was tested using a 70-15-15 split  of the data for training, validation, and testing sets. Our best model achieved approximately 60% top-5 accuracy on test data. After testing, the final model was saved using TensorFlow’s SavedModel format which was later converted to a FlatBuffer for use with TensorFlow Lite. While converting, quantization of the network’s weights optimized the model for mobile platforms.
 
 
-
-
 ## Flutter Implementation
-
-
-
+Developing with cross-platform technology will always come with additional issues that will need to be sorted due to the difference between the native side of each operating system. We quickly realized that the native camera units in both IOS and Android encode their camera images differently. As a result, we needed to handle both operating systems differently which *kind of* defeats the purpose of cross-plateform design. Other than the camera encoding issues, the application is fairly straight forward. On application startup, a camera stream is started which will feed a frame of data to the model any time the screen is double tapped. The model then returns an array of confidence values sorted from highest -> lowest. The value at position 0 in the array is then fed to an external speaking package which reads the label to the user. 
 
 
 ## Results
+As a result of the lack of resources available (computing power/accurate trainning data), we did not reach the goals that we originally set out to achieve, and that is okay! In an ideal world, we would have liked to have taken all the images ourselves in the actual store environment. If this was the case, we believe that our model would have been much more accurate. In the end we achieved approximately 60% top 5 accuracy and 24% top 1 accuracy from our models predictions. We were happy with this result and ended the project with a mark of 100% due to the time and effort we invested.
