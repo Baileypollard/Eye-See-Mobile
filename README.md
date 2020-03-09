@@ -10,7 +10,7 @@ My group consisted of 3 group memebers: Myself, Casson Smith and Justin Hiltz. O
 
 
 # Inspiration
-The application that we designed and developed was called Eye See Mobile. The idea stemmed from the idea of making shopping an idependant activity for the visually imparied. After scanning through the current available solutions, it was apparent that none of them offer a long term affordble solution for the visually impaired. Our goal was to use the power of Artificial Intelligence to train a model which could accurately identify popular products from a Canadian grocery store, more specifically Walmart. 
+The application that we designed and developed was called Eye See Mobile. The idea stemmed from the idea of making shopping an idependant activity for the visually imparied. After scanning through the currently available solutions, it was apparent that none of them offer a long term affordable solution for the visually impaired. Our goal was to use the power of Artificial Intelligence to train a model which could accurately identify popular products from a Canadian grocery store, more specifically Walmart. 
 
 
 # How we did it?
